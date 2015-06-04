@@ -1,0 +1,242 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Activity"
+        android:id="@+id/homeCreateActivity"
+        android:layout_above="@+id/homeSetDailyGoal"
+        android:layout_alignRight="@+id/homeSetDailyGoal"
+        android:layout_alignEnd="@+id/homeSetDailyGoal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"
+        android:onClick="openCreateActivityWindow" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Activity"
+        android:id="@+id/homeStartActivity"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/homeOnFocus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/homeCreateActivity"
+        android:layout_alignEnd="@+id/homeCreateActivity"
+        android:nestedScrollingEnabled="true"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Daily Goal"
+        android:id="@+id/homeSetDailyGoal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="OnFocus"
+        android:id="@+id/homeOnFocus"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="36dp"
+        android:textStyle="italic"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/camCancel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible"
+        android:onClick="openHomeScreen" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/camSave"
+        android:layout_below="@+id/homeCreateActivity"
+        android:layout_alignRight="@+id/homeOnFocus"
+        android:layout_alignEnd="@+id/homeOnFocus"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Create Activity"
+        android:id="@+id/camCreateActivityTextView"
+        android:layout_alignTop="@+id/homeOnFocus"
+        android:layout_centerHorizontal="true"
+        android:textSize="36dp"
+        android:textStyle="italic"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Activity Name:"
+        android:id="@+id/camActivityNameTextView"
+        android:textSize="24dp"
+        android:layout_above="@+id/camActivityNameEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/homeOnFocus"
+        android:layout_alignEnd="@+id/homeOnFocus"
+        android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/camActivityNameEditText"
+        android:maxLines="1"
+        android:textSize="24dp"
+        android:layout_below="@+id/homeStartActivity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Productive Activity?"
+        android:id="@+id/camProductiveActivityTextView"
+        android:layout_below="@+id/camActivityNameEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp"
+        android:textSize="24dp"
+        android:visibility="invisible" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:id="@+id/camProductiveActivityYes"
+        android:checked="false"
+        android:textSize="20dp"
+        android:layout_below="@+id/camProductiveActivityTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"
+        android:onClick="setAsProductiveActivity" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:id="@+id/camProductiveActivityNo"
+        android:checked="false"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/camProductiveActivityYes"
+        android:layout_alignBottom="@+id/camProductiveActivityYes"
+        android:layout_alignLeft="@+id/homeOnFocus"
+        android:layout_alignStart="@+id/homeOnFocus"
+        android:visibility="invisible"
+        android:onClick="setAsUnproductiveActivity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Periodic Alarm?"
+        android:id="@+id/camPeriodicAlarmTextView"
+        android:layout_below="@+id/camProductiveActivityYes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:textSize="24dp"
+        android:visibility="invisible" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:id="@+id/camPeriodicAlarmYes"
+        android:checked="false"
+        android:layout_below="@+id/camPeriodicAlarmTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        android:onClick="setActivityAlarmEnabled" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:id="@+id/camPeriodicAlarmNo"
+        android:layout_alignBottom="@+id/camPeriodicAlarmYes"
+        android:layout_alignLeft="@+id/camProductiveActivityNo"
+        android:layout_alignStart="@+id/camProductiveActivityNo"
+        android:textSize="20dp"
+        android:checked="false"
+        android:enabled="true"
+        android:visibility="invisible"
+        android:onClick="setActivityAlarmDisabled" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Alarm Time Interval"
+        android:id="@+id/camAlarmTimeIntervalTextView1"
+        android:textSize="24dp"
+        android:enabled="false"
+        android:layout_below="@+id/camPeriodicAlarmYes"
+        android:layout_alignRight="@+id/camProductiveActivityTextView"
+        android:layout_alignEnd="@+id/camProductiveActivityTextView"
+        android:layout_marginTop="17dp"
+        android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/camAlarmTimeIntervalEditText"
+        android:text="15"
+        android:layout_below="@+id/camAlarmTimeIntervalTextView1"
+        android:layout_toRightOf="@+id/camPeriodicAlarmTextView"
+        android:layout_alignRight="@+id/camProductiveActivityTextView"
+        android:layout_alignEnd="@+id/camProductiveActivityTextView"
+        android:enabled="false"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Play an alarm every            minutes after the activity begins."
+        android:id="@+id/camAlarmTimeIntervalTextView2"
+        android:layout_alignBaseline="@+id/camAlarmTimeIntervalEditText"
+        android:layout_alignBottom="@+id/camAlarmTimeIntervalEditText"
+        android:layout_alignLeft="@+id/camAlarmTimeIntervalTextView1"
+        android:layout_alignStart="@+id/camAlarmTimeIntervalTextView1"
+        android:layout_alignRight="@+id/homeCreateActivity"
+        android:layout_alignEnd="@+id/homeCreateActivity"
+        android:enabled="false"
+        android:visibility="invisible" />
+
+</RelativeLayout>
